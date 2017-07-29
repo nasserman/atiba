@@ -1,0 +1,14 @@
+
+
+@media print {
+
+    .hide-on-print { display: none !important; }
+    .print-only { display: block !important; }
+    body{background-color: #fff !important;height: auto;}
+
+    @page {
+      margin: 0%;
+      padding: 0%;
+    }
+
+}
