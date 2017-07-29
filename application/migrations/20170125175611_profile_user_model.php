@@ -6,7 +6,6 @@ class Migration_Profile_user_model extends CI_Migration {
 
         public function up()
         {
-
             $table_name = "profile_user";
             $pk_name = "id";
             $query = "CREATE TABLE IF NOT EXISTS `". $table_name."` (
@@ -25,6 +24,5 @@ class Migration_Profile_user_model extends CI_Migration {
         {
             $table_name = "profile_user";
             $this->dbforge->drop_table($table_name);
-
         }
 }
