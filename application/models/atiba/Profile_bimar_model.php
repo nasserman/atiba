@@ -20,7 +20,7 @@ class Profile_bimar_model extends N2_Model {
     *   m مرد
     */
     public $jensiat;
-    public $code_melli;
+    public $codemelli;
     public $tel;
     public $mobile;
     public $time_tavalod;
@@ -40,7 +40,7 @@ class Profile_bimar_model extends N2_Model {
             $this->etime = time();
             $this->name = $this->lastname = $this->name_pedar = "";
             $this->jensiat = "n";
-            $this->code_melli = "";
+            $this->codemelli = "";
             $this->tel = $this->mobile = $this->adres = "";
             $this->time_tavalod = -1;
         }

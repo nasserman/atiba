@@ -41,8 +41,7 @@
             <td>{{mobile}}</td>
             <td>
                 <div class="uk-button-group">
-                    <button type="button" class="uk-button uk-button-small" onclick="view({{pk}});">مشاهده</button>
-                    <button type="button" class="uk-button uk-button-small" onclick="edit({{pk}},'{{noe_furush}}');">ویرایش</button>
+                    <button type="button" class="uk-button uk-button-small" onclick="edit({{pk}});">مشاهده</button>
                 </div>
             </td>
         </tr>
@@ -58,9 +57,11 @@
 $(function(){
     <?php ajax_setup(); ?>
 
+    search();
+
     setInterval(function(){
         search();
-    } , 4000);
+    } , 10000);
 });
 // -----------------------------------------------------------------------------
 function edit(id_user){
