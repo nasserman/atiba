@@ -36,18 +36,18 @@ class Profile_user_model extends N2_Model {
             }
         }
         if(mb_strlen($this->name) < 2){
-            return N2_function_result::response(-2 , "name < 2");
+            return N2_function_result::response(-2 , "نام باید حداقل شامل ۲ کاراکتر باشد.");
         }
         if(mb_strlen($this->name) > 200){
-            return N2_function_result::response(-3 , "name > 200");
+            return N2_function_result::response(-3 , "نام حداکثر می تواند شامل ۲۰۰ کاراکتر باشد.");
         }
         if(mb_strlen($this->lastname) < 2){
-            return N2_function_result::response(-2 , "lastname < 2");
+            return N2_function_result::response(-2 , "نام خانوادگی باید حداقل شامل دو کاراکتر باشد.");
         }
         if(mb_strlen($this->lastname) > 200){
-            return N2_function_result::response(-3 , "lastname > 200");
+            return N2_function_result::response(-3 , "طول نام خانوادگی حداکثر ۲۰۰ کاراکتر است.");
         }
-        return N2_function_result::response(1 , "OK");
+        return N2_function_result::response(1 , "اطلاعات کاربری ذخیره شد.");
     }
 
     // -------------------------------------------------------------------------

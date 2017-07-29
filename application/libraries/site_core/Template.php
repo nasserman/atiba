@@ -64,7 +64,7 @@ class Template {
     {
         $this->ci->load->helper('file');
         $version = file_get_contents('version.txt');
-        $this->set_content('نسخه <b>حاج محمد خادم</b><br/>version : ' . $version , 'version');
+        $this->set_content('version : ' . $version , 'version');
 
         ob_start();
         include(set_realpath('templates/' . $this->template_name . '/' . $this->layout_name . '.php'));

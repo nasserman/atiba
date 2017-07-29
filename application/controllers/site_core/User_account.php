@@ -9,7 +9,7 @@ class User_account extends User_Controller {
         $_rolehaye_user = json_decode($this->current_user->id_roleha);
         if( (in_array('admin_user', $_rolehaye_user)) or (in_array('super_user', $_rolehaye_user))
             or (in_array('operator_user', $_rolehaye_user)) or (in_array('hesabdar_user', $_rolehaye_user)) ){
-                $this->load->model("sirm/Profile_user_model");
+                $this->load->model("atiba/Profile_user_model");
                 $this->current_user->profile = Profile_user_model::get_profile_user($this->current_user->PK());
         }
 
@@ -38,7 +38,7 @@ class User_account extends User_Controller {
         $_rolehaye_user = json_decode($this->current_user->id_roleha);
         if( (in_array('admin_user', $_rolehaye_user)) or (in_array('super_user', $_rolehaye_user))
             or (in_array('operator_user', $_rolehaye_user)) or (in_array('hesabdar_user', $_rolehaye_user)) ){
-                $this->load->model("sirm/Profile_user_model");
+                $this->load->model("atiba/Profile_user_model");
                 $this->current_user->profile = Profile_user_model::get_profile_user($this->current_user->PK());
         }
 

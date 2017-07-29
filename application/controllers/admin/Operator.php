@@ -7,10 +7,8 @@ class Operator extends Admin_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("sirm/Profile_user_model");
-        $this->load->library("sirm/Operator_user");
-        $this->load->model("sirm/Shobe_model");
-        $this->load->model("sirm/Shobe_operator_model");
+        $this->load->model("atiba/Profile_user_model");
+        $this->load->library("atiba/Operator_user");
     }
 
     // -------------------------------------------------------------------------
@@ -40,7 +38,7 @@ class Operator extends Admin_Controller {
                 $data["error"] = "کاربر مورد نظر وجود ندارد! #1223";
             }
             else if(!$user->is("operator_user")){
-                $data["error"] = "کاربر مورد نظر دارای نقش اپراتور(فروشنده) در سامانه نمی باشد. #1224";
+                $data["error"] = "کاربر مورد نظر دارای نقش اپراتور نمی باشد. #1224";
             }
         }
 
@@ -52,19 +50,6 @@ class Operator extends Admin_Controller {
             $user->profile = $profile;
             $data["user"] = $user;
         }
-
-        if(!$data["error"]){
-            $id_shobehaye_operator = [];
-            if($user->PK()>0){
-                $_t = Shobe_operator_model::find(["id_user"=>$user->PK()]);
-                foreach($_t as $_r){
-                    $id_shobehaye_operator[] = $_r->id_shobe;
-                }
-            }
-            $data["id_shobehaye_operator"] = $id_shobehaye_operator;
-            $data['shobeha'] = Shobe_model::find(["active"=>1]);
-        }
-
 
         $data["id_user"] = $id_user;
         $main_content = $this->load->view('admin/operator/edit' , $data , true);
@@ -145,16 +130,6 @@ class Operator extends Admin_Controller {
         $this->db->trans_complete();
 
         // ---------------------------------------------
-
-
-        $shobeha = $this->input->post("shobeha" , true);
-        Shobe_operator_model::update_sobehaye_user($user->PK() , $shobeha);
-
-
-
-
-
-
 
         $flash_message = new Site_flash_message("" , "ذخیره شد." , "success");
         set_site_flash_message($flash_message);

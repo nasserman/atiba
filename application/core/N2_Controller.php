@@ -22,5 +22,4 @@ class N2_Controller extends CI_Controller {
 require_once APPPATH .'/libraries/site_core/Authenticated_Controller.php';
 require_once APPPATH .'/libraries/site_core/User_Controller.php';
 require_once APPPATH .'/libraries/site_core/Operator_Controller.php';
-require_once APPPATH .'/libraries/site_core/Hesabdar_Controller.php';
 require_once APPPATH .'/libraries/site_core/Admin_Controller.php';

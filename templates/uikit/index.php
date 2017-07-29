@@ -11,7 +11,7 @@ $template_name = 'uikit';
         <?php if(isset($this->contents['title'])) : ?>
         <title><?php echo $this->contents['title']; ?></title>
         <?php else : ?>
-        <title>چاروق - نرم افزار مدیریت یکپارچه فروش</title>
+        <title>آتیبا - نرم افزار مدیریت مطب پزشکان</title>
         <?php endif; ?>
         <link rel="shortcut icon" href="<?php echo base_url('templates/'.$template_name.'/images/favicon.ico'); ?>" type="image/x-icon">
         <link rel="stylesheet" href="<?php echo base_url('templates/'.$template_name.'/css/jquery-ui.min.css'); ?>">
@@ -83,7 +83,7 @@ $template_name = 'uikit';
                         <?php if(isset($this->contents['menu1'])) {echo $this->contents['menu1'];} ?>
                     </ul>
                     <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
-                    <div class="uk-navbar-brand uk-navbar-center uk-visible-small">SiRM</div>
+                    <div class="uk-navbar-brand uk-navbar-center uk-visible-small">Atiba</div>
                 </nav>
             </div>
         </div>
@@ -161,10 +161,6 @@ $template_name = 'uikit';
             <div>
                 <div style="font-size: 12px;text-align: left;direction: ltr;padding: 5px 25px;">
                     <?php if(isset($this->contents['version'])) {echo $this->contents['version'];} ?>
-                    <br/>
-                    <a href="http://charog.ir" target="_blank" style="margin-left:24px;">
-                        <img alt="چاروق - نرم افزار مدیریت یکپارچه فروش" title="چاروق - نرم افزار مدیریت یکپارچه فروش" src="<?php echo base_url('images/charog/black/charog_32.png'); ?>" />
-                    </a>
                 </div>
             </div>
             <div>

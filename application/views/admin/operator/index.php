@@ -10,7 +10,7 @@
 
 
 <div class="uk-panel uk-width-1-1">
-    <h3 class="uk-panel-title">لیست اپراتورها (فروشنده‌ها)</h3>
+    <h3 class="uk-panel-title">لیست اپراتورها</h3>
 
 
     <div class="uk-form-row" style="text-align:left;">
@@ -19,7 +19,7 @@
 
     <div class="uk-form-row results-div">
         <?php if(count($operatorha) < 1) { ?>
-            هیچ اپراتور (فروشنده‌ای) وجود ندارد.
+            هیچ اپراتور وجود ندارد.
         <?php } else { ?>
             <table class="uk-table">
                 <thead>

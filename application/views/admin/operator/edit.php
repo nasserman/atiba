@@ -4,11 +4,7 @@
 *   string $error
 *   \User_model $user
 *       + \Profile_user_model profile
-*   [int] $id_shobehaye_user
-*   [\Shobe_model] $shobeha
 */
-// var_dump($id_shobehaye_operator);
-// var_dump($shobeha);
 ?>
 
 
@@ -69,20 +65,6 @@
                     <input type="text" id="lastname" name="lastname" style="text-align:right;direction:rtl;" value="<?php echo $user->profile->lastname; ?>" />
                 </div>
 
-                <hr/>
-
-                <fieldset>
-                    <legend>لیست شعب اپراتور</legend>
-                    <div class="uk-form-row">
-                        <?php foreach($shobeha as $shobe) { ?>
-                        <input type="checkbox" id="chbx-<?php echo $shobe->PK(); ?>" name="shobeha[]"
-                        <?php echo (in_array($shobe->PK() , $id_shobehaye_operator))?"checked":""; ?> value="<?php echo $shobe->PK(); ?>" />
-                        <label for="chbx-<?php echo $shobe->PK(); ?>" style="min-width:80px;margin-left:5px;" ><?php echo $shobe->name; ?></label>
-                        <?php } ?>
-                    </div>
-                </fieldset>
-
-
                 <div class="uk-form-row" style="text-align:left;">
                     <div class="uk-button-group">
                         <button type="button" class="uk-button save-btn uk-button-success" onclick="save()">ثبت و ذخیره</button>
@@ -102,11 +84,6 @@
 
 
 <script>
-
-$(function(){
-
-});
-
 function save()
 {
     $('.save-btn').attr("disabled" , "disabled");

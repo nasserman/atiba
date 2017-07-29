@@ -22,7 +22,7 @@ class Admin_Controller extends N2_Controller {
 
         $this->current_user = $_current_user;
 
-        $this->load->model("sirm/Profile_user_model");
+        $this->load->model("atiba/Profile_user_model");
         $this->current_user->profile = Profile_user_model::get_profile_user($_current_user->PK());
     }
 }
