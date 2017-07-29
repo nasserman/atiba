@@ -49,13 +49,14 @@ class Bimar extends Operator_Controller {
 
     // -------------------------------------------------------------------------
 
-    public function edit($id_profile_bimar = -1)
+    public function edit($id_profile_bimar = -1 , $callback_function = "search()")
     {
         $data["error"] = "";
         $id_profile_bimar = intval($id_profile_bimar);
         $profile_bimar = new Profile_bimar_model($id_profile_bimar);
         $data["profile_bimar"] = $profile_bimar;
 
+        $data["callback_function"] = $callback_function;
         $main_content = $this->load->view('operator/bimar/edit' , $data , true);
         $template = new Template();
         $template->set_layout("dialog");
@@ -101,7 +102,7 @@ class Bimar extends Operator_Controller {
 
         // ---------------------------------------------
 
-        echo N2_function_result::response(1 , "ذخیره شد." , "json");
+        echo N2_function_result::response(1 , "ذخیره شد." , "json" , ["pk"=>$profile_bimar->PK()]);
     }
 
     // -------------------------------------------------------------------------

@@ -3,6 +3,7 @@
 * inputs :
 *   string $error
 *   \Profile_bimar_model $profile_bimar
+*   string $callback_function
 */
 ?>
 
@@ -110,7 +111,9 @@ function save()
     req.done(function(data){
         if(data.code > 0){
             $.colorbox.close();
-            search();
+            var callback_function = "<?php echo $callback_function; ?>";
+            callback_function = callback_function.replace("pk" , data.pk);
+            eval(callback_function);
         }
         else {
             $('.save-btn').removeAttr("disabled");
