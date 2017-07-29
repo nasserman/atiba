@@ -25,14 +25,18 @@
 <table class="uk-table uk-table-striped">
     <thead>
         <tr>
-            <th style="text-align:right;"></th>
+            <th style="text-align:right;">نام/نام خانوادگی</th>
+            <th style="text-align:right;">وضعیت</th>
+            <th style="text-align:right;">تاریخ پذیرش</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         {{#each rows}}
         <tr>
-            <td>{{}}</td>
+            <td>{{namelastname}}</td>
+            <td>{{vaziat}}</td>
+            <td>{{time_paziresh_shode}}</td>
             <td>
                 <button type="button" class="uk-button uk-button-small" onclick="edit({{pk}});">مشاهده</button>
             </td>

@@ -31,21 +31,21 @@ class Paziresh extends Operator_Controller {
 
         $search_params["page_size"] = input_post_int("page_size" , 20);
         $search_params["page_index"] = input_post_int("page_index" , 0);
+        $search_params["populate_profile_bimar"] = true;
 
-        $_bimarha = Profile_bimar_model::find($search_params);
-        $bimarha = [];
-        foreach($_bimarha as $_bimar){
+        $_pazireshha = Paziresh_model::find($search_params);
+        $pazireshha = [];
+        foreach($_pazireshha as $_paziresh){
             $row = [
-                "namelastname"=>$_bimar->name. " " . $_bimar->lastname,
-                "codemelli"=>$_bimar->codemelli,
-                "tel"=>$_bimar->tel,
-                "mobile"=>$_bimar->mobile,
-                "pk"=>$_bimar->PK()
+                "pk"=>$_paziresh->PK(),
+                "namelastname"=>$_paziresh->profile_bimar->name . " " .$_paziresh->profile_bimar->lastname,
+                "time_paziresh_shode"=> ($_paziresh->time_paziresh_shode>0) ? jdate('Y/m/d H:i' , $_paziresh->time_paziresh_shode , '' , 'Asia/Tehran' , 'en') : "---",
+                "vaziat"=>Paziresh_model::vaziathaye_paziresh($_paziresh->vaziat)
             ];
-            $bimarha[] = $row;
+            $pazireshha[] = $row;
         }
 
-        echo N2_function_result::response(1 , "OK" , "json" , ["result"=>$bimarha]);
+        echo N2_function_result::response(1 , "OK" , "json" , ["result"=>$pazireshha]);
     }
 
     // -------------------------------------------------------------------------

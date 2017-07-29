@@ -68,6 +68,7 @@ class Paziresh_model extends N2_Model {
     *   int id_profile_bimar
     *   int page_index = 0
     *   int page_size : 20
+    *   bool populate_profile_bimar = false
     *
     * @return [\Paziresh_model]
     *
@@ -83,9 +84,18 @@ class Paziresh_model extends N2_Model {
         if(!isset($params["page_size"])){
             $params["page_size"] = 20;
         }
+        if(!isset($params["populate_profile_bimar"])){
+            $params["populate_profile_bimar"] = false;
+        }
+
+        $paziresh_model = Paziresh_model::DB_TABLE;
+        $profile_bimar_model = Profile_bimar_model::DB_TABLE;
 
         $c = &get_instance();
-        $c->db->select("*")->from(Paziresh_model::DB_TABLE);
+        $c->db->select("$profile_bimar_model.id as id_profile_bimar , $profile_bimar_model.stime as stime_profile_bimar , $profile_bimar_model.etime as etime_profile_bimar , $profile_bimar_model.* ,".
+                        " $paziresh_model.* ")
+            ->from(Paziresh_model::DB_TABLE)
+            ->join("$profile_bimar_model" , "$profile_bimar_model.id = $paziresh_model.id_profile_bimar");
 
         if($params["id_profile_bimar"] > 0){
             $c->db->where("id_profile_bimar" , $params["id_profile_bimar"]);
@@ -96,11 +106,38 @@ class Paziresh_model extends N2_Model {
 
         $results = [];
         foreach($rows as $row){
-            $profile = new Paziresh_model();
-            $profile->populate($row);
-            $results[$profile->PK()] = $profile;
+            $paziresh = new Paziresh_model();
+            $paziresh->populate($row);
+
+            if($params["populate_profile_bimar"]){
+                $profile_bimar = new Profile_bimar_model();
+                $row->id = $row->id_profile_bimar;
+                $row->stime = $row->stime_profile_bimar;
+                $row->etime = $row->etime_profile_bimar;
+                $profile_bimar->populate($row);
+                $paziresh->profile_bimar = $profile_bimar;
+            }
+
+            $results[$paziresh->PK()] = $paziresh;
         }
         return $results;
+    }
+
+    // -------------------------------------------------------------------------
+
+    public static function vaziathaye_paziresh($key = "")
+    {
+        $vaziatha = [
+            "na_moshakhas"=>"نامشخص",
+            "hazf_shode"=>"حذف شده",
+            "anjam_shode"=>"انجام شده",
+            "gayeb_dar_matab"=>"غائب در مطب",
+            "entezar_baraye_vizit"=>"انتظار"
+        ];
+        if($key){
+            return $vaziatha[$key];
+        }
+        return $vaziatha;
     }
 
     // -------------------------------------------------------------------------
