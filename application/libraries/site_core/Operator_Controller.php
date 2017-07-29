@@ -20,7 +20,7 @@ class Operator_Controller extends N2_Controller {
 
             user_logout();
             redirect('site_core/user/login');
-            exit('No allowed to Editor section');
+            exit('No allowed to this section');
         }
 
         $this->current_user = $_current_user;

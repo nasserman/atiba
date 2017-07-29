@@ -10,6 +10,6 @@ $config['migration_table'] = 'migrations';
 
 $config['migration_auto_latest'] = FALSE;
 
-$config['migration_version'] = 20170125175611;
+$config['migration_version'] = 20170729123141;
 
 $config['migration_path'] = APPPATH.'migrations/';

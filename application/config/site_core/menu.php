@@ -42,7 +42,7 @@ $config['menu'] = [
 
         [
             'title'=>'لیست بیماران' ,
-            'url'=>'admin/bimar/index' ,
+            'url'=>'operator/bimar/index' ,
             'prepare'=>true ,
             'view'=>'in_group',
             'id_roleha'=>json_encode(['admin_user','super_user','operator_user']),
@@ -51,7 +51,7 @@ $config['menu'] = [
 
         [
             'title'=>'لیست پذیرش‌ها' ,
-            'url'=>'admin/paziresh/index' ,
+            'url'=>'operator/paziresh/index' ,
             'prepare'=>true ,
             'view'=>'in_group',
             'id_roleha'=>json_encode(['admin_user','super_user']),
