@@ -40,9 +40,7 @@
             <td>{{tel}}</td>
             <td>{{mobile}}</td>
             <td>
-                <div class="uk-button-group">
-                    <button type="button" class="uk-button uk-button-small" onclick="edit({{pk}});">مشاهده</button>
-                </div>
+                <button type="button" class="uk-button uk-button-small" onclick="edit({{pk}});">مشاهده</button>
             </td>
         </tr>
         {{/each}}
