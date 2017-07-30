@@ -107,6 +107,19 @@ class Paziresh extends Operator_Controller {
 
     // -------------------------------------------------------------------------
 
+    public function pre_edit()
+    {
+        $data["bimarha"] = Profile_bimar_model::find(["page_size"=>2000]);
+
+        $main_content = $this->load->view('operator/paziresh/pre_edit' , $data , true);
+        $template = new Template();
+        $template->set_layout("dialog");
+        $template->set_content($main_content);
+        $template->render();
+    }
+
+    // -------------------------------------------------------------------------
+
 
 
 

@@ -12,7 +12,7 @@
 
 
     <div class="uk-form-row" style="text-align:left;">
-        <button type="button" onclick="edit(-1);" class="uk-button uk-button-primary" >ثبت پذیرش</button>
+        <button type="button" onclick="pre_edit();" class="uk-button uk-button-primary" >ثبت پذیرش</button>
     </div>
 
     <div class="uk-form-row results-div">
@@ -63,6 +63,11 @@ $(function(){
 function edit(id_user){
     var href = "<?php echo site_url("operator/paziresh/edit/"); ?>"+id_user;
     $.colorbox({href:href , width:'700px'});
+}
+// -----------------------------------------------------------------------------
+function pre_edit(){
+    var href = "<?php echo site_url("operator/paziresh/pre_edit/"); ?>";
+    $.colorbox({href:href , width:'700px' , height:"300px"});
 }
 // -----------------------------------------------------------------------------
 function search(){

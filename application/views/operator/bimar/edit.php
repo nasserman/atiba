@@ -5,6 +5,7 @@
 *   \Profile_bimar_model $profile_bimar
 *   string $callback_function
 */
+var_dump($callback_function);
 ?>
 
 
@@ -110,7 +111,7 @@ function save()
 
     req.done(function(data){
         if(data.code > 0){
-            $.colorbox.close();
+            // $.colorbox.close();
             var callback_function = "<?php echo $callback_function; ?>";
             callback_function = callback_function.replace("pk" , data.pk);
             eval(callback_function);

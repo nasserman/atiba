@@ -56,7 +56,7 @@ class Bimar extends Operator_Controller {
         $profile_bimar = new Profile_bimar_model($id_profile_bimar);
         $data["profile_bimar"] = $profile_bimar;
 
-        $data["callback_function"] = $callback_function;
+        $data["callback_function"] = urldecode($callback_function);
         $main_content = $this->load->view('operator/bimar/edit' , $data , true);
         $template = new Template();
         $template->set_layout("dialog");
