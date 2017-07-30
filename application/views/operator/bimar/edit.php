@@ -5,7 +5,6 @@
 *   \Profile_bimar_model $profile_bimar
 *   string $callback_function
 */
-var_dump($callback_function);
 ?>
 
 

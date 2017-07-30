@@ -48,7 +48,7 @@ function sabte_sarie_bimar(){
 // -----------------------------------------------------------------------------
 function entekhabe_bimar(){
     var id_profile_bimar = $("#select-entekhabe-bimar").val();
-    edit(id_profile_bimar);
+    edit(-1,id_profile_bimar);
 }
 // -----------------------------------------------------------------------------
 </script>

@@ -50,11 +50,19 @@ class Paziresh extends Operator_Controller {
 
     // -------------------------------------------------------------------------
 
-    public function edit($id_paziresh = -1)
+    public function edit($id_paziresh = -1 , $id_profile_bimar = -1)
     {
         $data["error"] = "";
         $id_paziresh = intval($id_paziresh);
-        $paziresh = new Profile_bimar_model($id_paziresh);
+        $id_profile_bimar = intval($id_profile_bimar);
+        $paziresh = new Paziresh_model($id_paziresh);
+
+        $profile_bimar = new Profile_bimar_model();
+        if($id_profile_bimar > 0){
+            $profile_bimar->load($id_profile_bimar);
+        }
+        $paziresh->profile_bimar = $profile_bimar;
+
         $data["paziresh"] = $paziresh;
 
         $main_content = $this->load->view('operator/paziresh/edit' , $data , true);

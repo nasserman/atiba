@@ -60,9 +60,9 @@ $(function(){
     } , 10000);
 });
 // -----------------------------------------------------------------------------
-function edit(id_user){
-    var href = "<?php echo site_url("operator/paziresh/edit/"); ?>"+id_user;
-    $.colorbox({href:href , width:'700px'});
+function edit(id_paziresh , id_user){
+    var href = "<?php echo site_url("operator/paziresh/edit/"); ?>"+ id_paziresh + "/" + id_user;
+    $.colorbox({href:href , width:'1000px'});
 }
 // -----------------------------------------------------------------------------
 function pre_edit(){
