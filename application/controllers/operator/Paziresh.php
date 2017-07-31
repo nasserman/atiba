@@ -64,6 +64,7 @@ class Paziresh extends Operator_Controller {
         $paziresh->profile_bimar = $profile_bimar;
 
         $data["paziresh"] = $paziresh;
+        $data["randomkey"] = reshteye_tasadofi(8);
 
         $main_content = $this->load->view('operator/paziresh/edit' , $data , true);
         $template = new Template();

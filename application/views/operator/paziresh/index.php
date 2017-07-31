@@ -62,12 +62,12 @@ $(function(){
 // -----------------------------------------------------------------------------
 function edit(id_paziresh , id_user){
     var href = "<?php echo site_url("operator/paziresh/edit/"); ?>"+ id_paziresh + "/" + id_user;
-    $.colorbox({href:href , width:'1000px'});
+    $.colorbox({href:href , width:'700px'});
 }
 // -----------------------------------------------------------------------------
 function pre_edit(){
     var href = "<?php echo site_url("operator/paziresh/pre_edit/"); ?>";
-    $.colorbox({href:href , width:'700px' , height:"300px"});
+    $.colorbox({href:href , width:'700px' , height:"400px"});
 }
 // -----------------------------------------------------------------------------
 function search(){
